@@ -9,7 +9,7 @@ let startup = false;
 let streams = { };
 let tags = [
   "7cefbf30-4c3e-4aa7-99cd-70aabb662f27", 
-  "2fd30cb8-f2e5-415d-9d42-1316cfa61367",
+  //"2fd30cb8-f2e5-415d-9d42-1316cfa61367",
   "0b83a789-5f6a-45f0-b6a3-a56926b6f8b5",
 ];//Speedrun, Randomizer, TAS
 
