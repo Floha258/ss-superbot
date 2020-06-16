@@ -102,13 +102,18 @@ function toWeirdCase (pattern, str) {
 discordClient.on('message', (message) => {
   let streamCommandRegex = /^(\.|!)streams$/i;
   let streamNotCased = /^(\.|!)streams$/;
+  let newTrickCommand = /^(\|!)newRoute$/;	
   let channel = discordClient.channels.get(config['discord-notifications-channel-id']); 
   //let colorCommand = /^(\.|!)color/;
   //let roleCommand = /^(\.|!)role/;
   //let roleRCommand = /^(\.|!)removerole/;
   let clearCommand = /^(\.|!)clear$/;
   //let commandsCommand = /^(\.|!)commands$/;
-  /*if (message.channel.id === colorDiscordChannel.id && commandsCommand.test(message.content)) {
+  if (newTrickCommand.test(message.content)) {
+    message.channel.send("**Early Boss Rush Implications:** \n https://pastebin.com/nP6PDF9L");
+    return;
+  }	
+  /*if (newRouteCommand.test(message.content)) {
     let colorOpts = "";
     config["colors"].forEach(color => {
       colorOpts = colorOpts + color + "/";
