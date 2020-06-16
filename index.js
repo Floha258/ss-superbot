@@ -24,6 +24,7 @@ class DiscordChannel {
 const responseDiscordChannel = new DiscordChannel(config['discord-response-channel-id']);
 const notifyDiscordChannel = new DiscordChannel(config['discord-notifications-channel-id']);
 const colorDiscordChannel = new DiscordChannel(config['discord-colors-channel-id']);
+const commandDiscordChannel = new DiscordChannel(config['discord-command-channel-id']);
 
 setTimeout(() => {
   console.log("Logging in to discord...");
@@ -109,7 +110,7 @@ discordClient.on('message', (message) => {
   //let roleRCommand = /^(\.|!)removerole/;
   let clearCommand = /^(\.|!)clear$/;
   //let commandsCommand = /^(\.|!)commands$/;
-  if (newTrickCommand.test(message.content)) {
+  if (message.channel.id === commandDiscordChannel.id && newTrickCommand.test(message.content)) {
     message.channel.send("**Early Boss Rush Implications:** \n https://pastebin.com/nP6PDF9L");
     return;
   }	
